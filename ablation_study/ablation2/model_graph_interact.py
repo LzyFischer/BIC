@@ -6,7 +6,6 @@ from src.utils import FixedPooling
 
 class InteractModel(nn.Module):
     """
-    input_dim主要用于text的输入dim，所有处理过的数据都是hidden——dim大小
     """
     def __init__(self, num_property_dim=5, cat_property_dim=3, tweet_dim=768,
                  des_dim=768, input_dim=768, hidden_dim=768, output_dim=768, 
@@ -36,7 +35,7 @@ class InteractModel(nn.Module):
         
         self.attention_linear = nn.Linear(attention_dim * attention_dim * 2, output_dim // 3)
         self.user_feature_linear = nn.Linear(output_dim, output_dim // 3)
-        self.title_linear = nn.Linear(output_dim, output_dim // 3) #text的长度不会在resp layer里面改变，因此还是hidden——dim
+        self.title_linear = nn.Linear(output_dim, output_dim // 3) 
 
         self.final_linear = nn.Linear(output_dim, 2)
     
@@ -63,13 +62,13 @@ class InteractModel(nn.Module):
         # text, all_user_feature, attention_graph_2 = self.Model_2(text, user_neighbor_index, 
         #                                                        all_user_feature, edge_index)
         title = text[:, 0]
-        title = self.title_linear(title) #可选
+        title = self.title_linear(title) 
 
         user_index = []
         for neighbor_index in user_neighbor_index:
             user_index.append(neighbor_index[0])
         user_feature = all_user_feature[user_index]
-        user_feature = self.user_feature_linear(user_feature) #可选
+        user_feature = self.user_feature_linear(user_feature) 
         
         attention_vec_0 = attention_graph_0.view(attention_graph_0.shape[0], self.attention_dim * self.attention_dim)
         attention_vec_1 = attention_graph_1.view(attention_graph_1.shape[0], self.attention_dim * self.attention_dim)
@@ -125,7 +124,7 @@ class RespectiveLayer(nn.Module):
         return text, all_user_feature, attention_graph
 
     
-class InteractLayer(nn.Module): #大概花4min
+class InteractLayer(nn.Module): 
     def __init__(self, in_channels=768, out_channels=768):
         super(InteractLayer, self).__init__()
         self.linear_text = nn.Linear(in_channels, out_channels)
@@ -172,7 +171,6 @@ class InteractLayer(nn.Module): #大概花4min
     
 class MultiAttn(nn.Module):
     """
-    在这里对用户和邻居进行了操作以后, 需要在all_feature中更新数据
     """
     def __init__(self, embed_dim=768, num_heads=4):
         super(MultiAttn, self).__init__()

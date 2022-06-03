@@ -21,7 +21,7 @@ def padding_tweets(user_tweets_tensor):
         user_tweets_tensor = user_tweets_tensor.resize_(200, 768)
     return user_tweets_tensor
 
-users_tweets = np.load('../../czl/TwiBot22-baselines/src/T5/Twibot-20/data/user_tweets_dict.npy', allow_pickle=True).tolist()
+users_tweets = np.load('data/user_tweets_dict.npy', allow_pickle=True).tolist()
 
 tweets_tensor = []
 for i in tqdm(range(2000, 4000)):
@@ -29,7 +29,7 @@ for i in tqdm(range(2000, 4000)):
     try:
         for tweet in users_tweets[i]:
             tweet_tensor = torch.tensor(feature_extractor(tweet)).squeeze(0)
-            tweet_tensor = torch.mean(tweet_tensor, dim=0) #一个句子
+            tweet_tensor = torch.mean(tweet_tensor, dim=0) 
             user_tweets_tensor.append(tweet_tensor)
         user_tweets_tensor = torch.stack(user_tweets_tensor)
         user_tweets_tensor = padding_tweets(user_tweets_tensor)

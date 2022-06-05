@@ -70,6 +70,7 @@ class InteractModel(nn.Module):
         title = text[:, 0]
         title = self.dropout(self.relu(self.title_linear(title)))
 
+        
         user_index = []
         for neighbor_index in user_neighbor_index:
             user_index.append(neighbor_index[0])

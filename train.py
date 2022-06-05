@@ -33,9 +33,8 @@ def eval(all_confusion):
     return acc, f1, precision, recall
     
 
-# path1 = Path('../../czl/TwiBot22-baselines/data')
+
 path1 = Path('src/data')
-# path3 = Path('../../czl/TwiBot22-baselines/datasets/Twibot-20')
 path2 = Path('src/state_dict')
 
 split = [[], [], []]

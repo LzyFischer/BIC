@@ -41,6 +41,7 @@ split = [[], [], []]
 split_list = pd.read_csv(path1 / 'split.csv')
 label = pd.read_csv(path1 / 'label.csv')
 
+
 users_index_to_uid = list(label['id'])
 uid_to_users_index = {x : i for i, x in enumerate(users_index_to_uid)}
 for id in split_list[split_list['split'] == 'train']['id']:

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f85babf5-45f0-4c5e-9b8d-43f20a9c1bae" name="BOT">
+        <fileTransfer rootFolder="/data/whr/BOT" accessType="SFTP" host="202.117.43.206" port="1526" sshConfigId="a1635412-85a8-4f34-b90d-ff97567d9de3" sshConfig="whr@202.117.43.206:1526 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,5 +1,5 @@
 # BIC
-BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency
+## BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency
 
 Twitter bots are automatic programs operated by malicious actors to manipulate public 
 opinion and spread misinformation. Research efforts have been made to automatically 

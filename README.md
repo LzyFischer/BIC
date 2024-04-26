@@ -25,3 +25,4 @@ improvements and help combat bot evolution.
 ## Reproduce
 For **Twibot-20** dataset, we recommend the code in the Twibot20 folder. For **Cresci-15** dataset, 
 we recommend the code in the Cresci15v2 dataset.
+We will give a better illustration of the code sooner!

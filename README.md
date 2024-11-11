@@ -22,6 +22,15 @@ state-of-the-art baselines on two widely adopted datasets. Further analyses reve
 that text-graph interactions and modeling semantic consistency are essential 
 improvements and help combat bot evolution.
 
+
+## Preprocessed Data
+We provide our preprocessed data:
+
+link: [https://pan.baidu.com/s/1CWT_rkggu3nB2JYn6xny4Q](https://pan.baidu.com/s/1CWT_rkggu3nB2JYn6xny4Q)
+
+password: 6wbt
+
+
 ## Reproduce
 For **Twibot-20** dataset, we recommend the code in the Twibot20 folder. For **Cresci-15** dataset, 
 we recommend the code in the Cresci15v2 dataset.
